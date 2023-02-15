@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Web Page</title>
     <link rel="stylesheet" href="style.css">
-    <script src="scripts.js"></script>
+    <script src="index.js"></script>
 </head>
 
 <body>
@@ -103,10 +102,50 @@
             <input type="text" id="email" placeholder="Enter your email"><br>
             <input type="submit" value="Submit">
         </form>
-
-        <hr>
+ <hr>
     </div>
+<script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
+    const subject = document.getElementById("sub").value;
+    const content = document.getElementById("content").value;
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+
+    if (!subject) {
+      alert("Subject is required");
+      return;
+    }
+
+    if (!content) {
+      alert("Message is required");
+      return;
+    }
+
+    if (!name) {
+      alert("Name is required");
+      return;
+    }
+
+    if (!email) {
+      alert("Email is required");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      alert("Invalid email address");
+      return;
+    }
+
+    alert("Form submitted successfully");
+  });
+  
+</script>
 </body>
 
 </html>
+
+<!-- rohith male -->
+<!-- 2-13-23 -->
+<!--ucid: rm982  -->
