@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>My Projects</h1>
+      {% for project in projects %}
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ project.title }}</h5>
+            <p class="card-text">{{ project.description }}</p>
+            <p class="card-text"><small class="text-muted">{{ project.year }}</small></p>
+          </div>
+        </div>
+      {% empty %}
+        <p>No projects found.</p>
+      {% endfor %}
+
+      <h1>Work Experience</h1>
+      {% for job in work_experiences %}
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ job.title }}</h5>
+            <p class="card-text">{{ job.description }}</p>
+            <p class="card-text"><small class="text-muted">{{ job.start_date }} - {{ job.end_date }}</small></p>
+          </div>
+        </div>
+      {% empty %}
+        <p>No work experience found.</p>
+      {% endfor %}
+
+      <h1>Education</h1>
+      {% for education in educations %}
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ education.degree }}</h5>
+            <p class="card-text">{{ education.institution }}</p>
+            <p class="card-text"><small class="text-muted">{{ education.graduation_date }}</small></p>
+          </div>
+        </div>
+      {% empty %}
+        <p>No education found.</p>
+      {% endfor %}
+
+      <h1>Skills</h1>
+      {% for skill in skills %}
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ skill.name }}</h5>
+            <p class="card-text">{{ skill.description }}</p>
+          </div>
+        </div>
+      {% empty %}
+        <p>No skills found.</p>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+<!-- Rohith Male
+rm982
+08-04-2023 -->
