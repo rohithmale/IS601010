@@ -1,0 +1,14 @@
+{% extends "portfolio/base.html" %} 
+
+{% block content %} 
+ <center><h1>Register</h1></center>
+ <form method = "POST">
+    {% csrf_token %} 
+    {{ form.as_p }} 
+    <input type = "submit" value = "create account"></form></input>
+ </form>
+ {% endblock %}
+
+ <!-- rohithmale
+rm982
+29-04-2023 -->

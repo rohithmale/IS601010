@@ -5,7 +5,7 @@ class Project(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     year = models.DateField()
-    from django.db import models
+    
 
 class WorkExperience(models.Model):
     company = models.CharField(max_length=100)

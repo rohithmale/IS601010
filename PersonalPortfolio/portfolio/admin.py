@@ -1,7 +1,10 @@
 from django.contrib import admin
-from .models import Project,WorkExperience,Education,Skill
+from .models import Project 
 # Register your models here.
-admin.site.register(Project)
-admin.site.register(WorkExperience)
-admin.site.register(Education)
-admin.site.register(Skill)
+
+class Projectcol(admin.ModelAdmin):
+    list_display = ('title', 'description', 'year')
+
+
+
+admin.site.register(Project, Projectcol)

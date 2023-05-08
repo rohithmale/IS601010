@@ -1,0 +1,10 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+  <center><h1>Form</h1></center>
+  <form method="POST" action=".">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add project</button>
+  </form>
+{% endblock %}
